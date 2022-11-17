@@ -1,12 +1,14 @@
 databases:
   - name: remixdb
-    plan: free
+    plan: starter
+    region: frankfurt
 
 services:
   - type: web
     name: remix
     env: node
-    plan: free
+    plan: starter
+    region: frankfurt
     buildCommand: npm ci --production=false && npm run build && npm prune --production
     startCommand: npx prisma migrate deploy && npm run start
     healthCheckPath: /healthcheck
